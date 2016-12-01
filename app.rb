@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/cd')
+require('./lib/artist')
 
 get('/') do
   erb(:index)
@@ -25,7 +26,7 @@ post('/cd_title') do
 end
 
 post('/cd_artist') do
-  artists = params.fetch('artist')
+  artist = params.fetch('artist')
   @artists = Artist.new(artist)
   @artists.save()
   erb(:success)
