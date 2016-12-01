@@ -1,7 +1,6 @@
 <h1>Personal CD Catalog</h1>
 
 <h3>Add a CD title:</h3>
-
 <form action="/cd_title" method="post">
   <label for="title">Album Name:</label>
   <input type="text" name="title" id="title">
@@ -9,4 +8,14 @@
   <button type="submit">Add Title</button>
 </form>
 
+<h3>Add an Artist Name:</h3>
+<form action="/cd_artist" method="post">
+  <label for="artist">Artist Name:</label>
+  <input type="text" name="artist" id="artist">
+
+  <button type="submit">Add Artist</button>
+</form>
+
 <a href="/titles">See CD Titles List</a>
+<br>
+<a href="/artists">See CD Artists List</a>

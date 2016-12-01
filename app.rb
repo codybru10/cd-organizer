@@ -12,9 +12,21 @@ get('/titles') do
   erb(:titles)
 end
 
+get('/artists') do
+  @artists = Artist.all()
+  erb(:artists)
+end
+
 post('/cd_title') do
   title = params.fetch('title')
   @title = Organizer.new(title)
   @title.save()
+  erb(:success)
+end
+
+post('/cd_artist') do
+  artists = params.fetch('artist')
+  @artists = Artist.new(artist)
+  @artists.save()
   erb(:success)
 end
